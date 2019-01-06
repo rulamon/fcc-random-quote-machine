@@ -1,0 +1,6 @@
+#quote-box {
+  background-color: blue;
+}
+#quote-box #text {
+  background-color: red;
+}
