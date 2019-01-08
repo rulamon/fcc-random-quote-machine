@@ -4,14 +4,25 @@
 	<title>Random Jazz Quote Machine</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="script.js"></script>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-	<div id="quote-box">
-		<div id="text"></div>
-		<div id="author"></div>
-		<button id="tweet-quote">Tweet this quote</button>
-		<button id="new-quote">Generate new quote</button>
+	<div id="main-flex-wrapper">
+		<div id="quote-box">
+			<div id="text-flex-container">
+				<div id="text"></div>
+			</div>			
+			<div id="author-flex-container">
+				<div id="author"></div>
+			</div>
+			<div id="button-flex-container">
+				<button id="tweet-quote"><i class="fab fa-twitter"></i></button>
+				<button id="new-quote">Next quote</button>
+			</div>
+		</div>
 	</div>
 </body>
 </html>

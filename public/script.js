@@ -72,11 +72,11 @@ $(document).ready(function() {
 	{author: "Bill Evans", text: "Despite the fact I'm a professional performer, it's true that I have always preferred playing without an audience."},
 	{author: "Bill Evans", text: "Art should teach spirituality by showing a person a portion of himself that he would not discover otherwise."},
 	{author: "Bill Evans", text: "Words are the children of reason & therefore can't translate the feeling of Jazz because they're not part of it."},
-	{author: "Ella Fitzgeralde", text: "It isn't where you came from, it's where you're going that counts." },
-	{author: "Ella Fitzgeralde", text: "Forgive me if I don't have the words. Maybe I can sing it & you'll understand."},
-	{author: "Ella Fitzgeralde", text: "When we were at the Apollo, Holiday was a block away. I asked her for her autograph."},
-	{author: "Ella Fitzgeralde", text: "The fabulous places I've been, wonderful things that've happened, great people I've met ought to make a story."},
-	{author: "Ella Fitzgeralde", text: "Don't give up trying to do what you really want. Where there is love & inspiration, I don't think you can go wrong." },
+	{author: "Ella Fitzgerald", text: "It isn't where you came from, it's where you're going that counts." },
+	{author: "Ella Fitzgerald", text: "Forgive me if I don't have the words. Maybe I can sing it & you'll understand."},
+	{author: "Ella Fitzgerald", text: "When we were at the Apollo, Holiday was a block away. I asked her for her autograph."},
+	{author: "Ella Fitzgerald", text: "The fabulous places I've been, wonderful things that've happened, great people I've met ought to make a story."},
+	{author: "Ella Fitzgerald", text: "Don't give up trying to do what you really want. Where there is love & inspiration, I don't think you can go wrong." },
 	{author: "Dizzy Gillespie", text: "It's taken me all my life to learn what not to play." },
 	{author: "Dizzy Gillespie", text: "Men have died for this music. You can't get more serious than that."},
 	{author: "Dizzy Gillespie", text: "The sign of a mature musician is knowing what not to play." },
@@ -149,13 +149,17 @@ $(document).ready(function() {
 // assign first random quote object to variable and add to html elements
 
 	const firstQuoteObject = quotesArray.randomQuoteObject();
-	$("#text").text(firstQuoteObject.text);
-	$("#author").text(firstQuoteObject.author);
+	$("#text").text('"' + firstQuoteObject.text + '"');
+	$("#author").text('-' +  firstQuoteObject.author);
 
 // define click event, assigning a random object to a variable and placing the info in the assigned divs
 	$("#new-quote").click(()=> {
 		const newQuoteObject = quotesArray.randomQuoteObject();
-		$("#text").text(newQuoteObject.text);
-		$("#author").text(newQuoteObject.author);
+		$("#text").fadeOut(500);
+		$("#author").fadeOut(500);
+		setTimeout(() => {
+			$("#text").text('"' + newQuoteObject.text + '"').fadeIn(500);
+			$("#author").text('-' +  newQuoteObject.author).fadeIn(500);
+		}, 500)
 	});
 });

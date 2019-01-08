@@ -1,6 +1,89 @@
-#quote-box {
-	background-color: blue;
-	#text {
-		background-color: red;
+$main-font: 'EB Garamond', serif;
+$main-color: #000000;
+$text-color: #555555;
+$button-focus-color: #111111;
+
+body {
+	padding: 0;
+	margin: 0;
+}
+
+#main-flex-wrapper { 
+	background-color: $main-color;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
+
+	#quote-box {
+		background-color: $main-color;//#222222; 
+		font-family: $main-font;
+		color: $text-color;
+		height: 80vh;
+		width: 60vw;
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		justify-content: center;
+
+		#text-flex-container {
+			background-color: $main-color;//#333333; 
+			flex-basis: auto;
+			display: flex;
+			align-items: stretch;
+			justify-content: center;
+			transition: content 1s;
+		
+
+			#text {
+				font-size: 40px;
+				text-align: center;
+			}
+		}
+
+		#author-flex-container {
+			display: flex;
+			flex-basis: 10%;
+			align-items: center;
+			justify-content: flex-end;
+			background-color: $main-color;//#555555; 
+			padding-right: 60px;
+			transition: content 1s;
+
+			#author {
+				font-size: 25px;
+			}
+		}
+
+		#button-flex-container {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-around;
+			background-color: $main-color; 
+			flex-basis: 100px;
+
+
+			button {
+				font-family: $main-font;
+				height:50px;
+				flex-basis: 170px;
+				font-size: 25px;
+				background-color: $main-color;
+				color: $text-color;
+				border-radius: 5px;
+				-webkit-transition: background-color 0.5s;
+				transition: background-color 0.5s;
+				border: none;
+			}
+			button:focus {
+				outline: none;
+			}
+			button:hover {
+				background-color: $button-focus-color;
+				// border: solid 1px $text-color;
+			}
+		}
 	}
 }
