@@ -107,10 +107,10 @@ $(document).ready(function() {
 	{author: "Billie Holiday", text: "I never had a chance to play with dolls like other kids. I started working when I was 6 years old."},
 	{author: "Billie Holiday", text: "I hate straight singing. I have to change a tune to my own way of doing it. That's all I know." },
 	{author: "Billie Holiday", text: "You can't copy anybody and end up with anything. If you copy, you're working without any real feeling." },
-	{author: "Billie Holiday", text: "I don't think I ever sing the same way twice. The blues is sort of a mixedtext:up thing. You just have to feel it. Anything I do sing is part of my life."},
+	{author: "Billie Holiday", text: "I don't think I ever sing the same way twice. The blues is sort of a mixed-up thing. You just have to feel it. Anything I do sing is part of my life."},
 	{author: "Billie Holiday", text: "I'm always making a comeback but nobody ever tells me where I've been."},
 	{author: "Keith Jarrett", text: "Jazz is one of the least learnable art forms."},
-	{author: "Keith Jarrett", text: "You have to be present for Jazz text: that simple." },
+	{author: "Keith Jarrett", text: "You have to be present for Jazz - that simple." },
 	{author: "Keith Jarrett", text: "I cannot say what I think is right about Music. I only know the rightness of it." },
 	{author: "Keith Jarrett", text: "Jazz is there & gone. It happens. You have to be present for it. That simple."},
 	{author: "Keith Jarrett", text: "If music is sound & came from silence, then silence is potentially greater than sound." },
@@ -126,7 +126,7 @@ $(document).ready(function() {
 	{author: "Thelonious Monk", text: "I like to sleep. There is no set time of day for sleep. You sleep when you're tired & that's all there is to it."},
 	{author: "Thelonious Monk", text: "Play what you want & let the public pick up on what you doing even if it does take them 15, 20 years." },
 	{author: "Thelonious Monk", text: "A Jazz musician is supposed to find his voice, find his niche & do his thing." },
-	{author: "Thelonious Monk", text: "Jazz is a work in progress. We'll be defining traditions in Jazz for 200text:300 years." },
+	{author: "Thelonious Monk", text: "Jazz is a work in progress. We'll be defining traditions in Jazz for 200-300 years." },
 	{author: "Charlie Parker", text: "The time is now." },
 	{author: "Charlie Parker", text: "I can play all I know in eight bars." },
 	{author: "Charlie Parker", text:"You've got to learn your instrument." },
@@ -138,7 +138,7 @@ $(document).ready(function() {
 	{author: "Charlie Parker", text: "I kept thinking there's bound to be something else? I could hear it sometimes, but I couldn't play it." },
 	{author: "Charlie Parker", text: "They teach you there's a boundary line to music. But, man, there's no boundary line to art." },
 	{author: "Charlie Parker", text: "Music is your experience, your thoughts, your wisdom. If you don't live it, it won't come out of your horn." },
-	{author: "Charlie Parker", text: "In Kansas City joints ran 9pmtext:5am. Pay was a $1.25 a night but somebody special like Count Basie could command $1.50."}]
+	{author: "Charlie Parker", text: "In Kansas City joints ran 9pm-5am. Pay was a $1.25 a night but somebody special like Count Basie could command $1.50."}]
 
 
 // create method to generate random quote object
@@ -146,20 +146,22 @@ $(document).ready(function() {
 		return this[Math.floor(Math.random() * this.length)]
 	};
 
-// assign first random quote object to variable and add to html elements
+// assign first random quote object to variable and add to html elements, also set tweet contents in href
 
 	const firstQuoteObject = quotesArray.randomQuoteObject();
 	$("#text").text('"' + firstQuoteObject.text + '"');
 	$("#author").text('-' +  firstQuoteObject.author);
+	$("#tweet-quote").attr("href", "https://www.twitter.com/intent/tweet?text=" + encodeURIComponent(firstQuoteObject.text + "  -" + firstQuoteObject.author)  + "&hashtags=jazzquote")
 
 // define click event, assigning a random object to a variable and placing the info in the assigned divs
 	$("#new-quote").click(()=> {
 		const newQuoteObject = quotesArray.randomQuoteObject();
-		$("#text").fadeOut(500);
-		$("#author").fadeOut(500);
+		$("#quote-wrapper").fadeOut(500);
 		setTimeout(() => {
-			$("#text").text('"' + newQuoteObject.text + '"').fadeIn(500);
-			$("#author").text('-' +  newQuoteObject.author).fadeIn(500);
+			$("#text").text('"' + newQuoteObject.text + '"');
+			$("#author").text('-' +  newQuoteObject.author);
+			$("#tweet-quote").attr("href", "https://www.twitter.com/intent/tweet?text=" + encodeURIComponent(newQuoteObject.text + "  -" + newQuoteObject.author)  + "&hashtags=jazzquote")
+			$("#quote-wrapper").fadeIn(500)
 		}, 500)
 	});
 });

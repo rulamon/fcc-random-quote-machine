@@ -2,64 +2,107 @@ body {
   padding: 0;
   margin: 0; }
 
-#main-flex-wrapper {
-  background-color: #000000;
+.flex-parent-center {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  flex-direction: column; }
+
+#wrapper {
+  background-color: #ffffff;
   height: 100vh;
   width: 100vw; }
-  #main-flex-wrapper #quote-box {
-    background-color: #000000;
+  #wrapper #quote-box {
+    background-color: #ffffff;
     font-family: "EB Garamond", serif;
-    color: #555555;
-    height: 80vh;
+    color: #000000;
+    font-weight: bold;
+    height: 85vh;
     width: 60vw;
     display: flex;
-    flex-direction: column;
     align-items: stretch;
     justify-content: center; }
-    #main-flex-wrapper #quote-box #text-flex-container {
-      background-color: #000000;
-      flex-basis: auto;
-      display: flex;
-      align-items: stretch;
-      justify-content: center;
-      transition: content 1s; }
-      #main-flex-wrapper #quote-box #text-flex-container #text {
+    #wrapper #quote-box #quote-wrapper {
+      padding: 60px 40px;
+      border: solid 4px #000000; }
+      #wrapper #quote-box #quote-wrapper #text {
         font-size: 40px;
-        text-align: center; }
-    #main-flex-wrapper #quote-box #author-flex-container {
-      display: flex;
-      flex-basis: 10%;
-      align-items: center;
-      justify-content: flex-end;
-      background-color: #000000;
-      padding-right: 60px;
-      transition: content 1s; }
-      #main-flex-wrapper #quote-box #author-flex-container #author {
-        font-size: 25px; }
-    #main-flex-wrapper #quote-box #button-flex-container {
+        text-align: center;
+        align-self: stretch;
+        transition: content 1s; }
+      #wrapper #quote-box #quote-wrapper #author {
+        font-size: 24px;
+        align-self: flex-end;
+        padding: 10px 30px 0 0;
+        transition: content 1s; }
+      @media only screen and (max-width: 600px) {
+        #wrapper #quote-box #quote-wrapper #text {
+          font-size: 24px; }
+        #wrapper #quote-box #quote-wrapper #author {
+          font-size: 14.4px; } }
+    @media only screen and (max-width: 600px) {
+      #wrapper #quote-box #quote-wrapper {
+        padding: 17px 15px; } }
+    #wrapper #quote-box #button-flex-container {
       display: flex;
       flex-direction: row;
       align-items: center;
-      justify-content: space-around;
-      background-color: #000000;
-      flex-basis: 100px; }
-      #main-flex-wrapper #quote-box #button-flex-container button {
-        font-family: "EB Garamond", serif;
-        height: 50px;
-        flex-basis: 170px;
-        font-size: 25px;
-        background-color: #000000;
-        color: #555555;
-        border-radius: 5px;
-        -webkit-transition: background-color 0.5s;
-        transition: background-color 0.5s;
-        border: none; }
-      #main-flex-wrapper #quote-box #button-flex-container button:focus {
+      justify-content: flex-end;
+      flex-basis: 130px;
+      font-family: "Libre Franklin", sans-serif;
+      font-size: 30px; }
+      #wrapper #quote-box #button-flex-container button:focus {
         outline: none; }
-      #main-flex-wrapper #quote-box #button-flex-container button:hover {
-        background-color: #111111; }
+      #wrapper #quote-box #button-flex-container #tweet-quote {
+        height: 75px;
+        width: 128px;
+        border-radius: 50%;
+        color: #ffffff;
+        background-color: #000000;
+        border: none;
+        -webkit-transition: background-color 0.5s, color 0.5s;
+        transition: background-color 0.5s, color 0.5s;
+        align-self: flex-end;
+        margin-right: 5px;
+        font-size: 30px;
+        text-align: center;
+        line-height: 75px; }
+      #wrapper #quote-box #button-flex-container #tweet-quote:hover {
+        background-color: #0066ff; }
+      @media only screen and (max-width: 600px) {
+        #wrapper #quote-box #button-flex-container #tweet-quote {
+          width: 83px;
+          height: 50px;
+          font-size: 20px;
+          line-height: 50px; } }
+      #wrapper #quote-box #button-flex-container #new-quote {
+        flex-basis: 57px;
+        font-family: "Libre Franklin", sans-serif;
+        font-size: 30px;
+        width: 200px;
+        color: #000000;
+        border: solid 4px #000000;
+        background-color: #ffffff;
+        -webkit-transition: border-color 0.5s, color 0.5s;
+        transition: border-color 0.5s, color 0.5s;
+        text-align: left; }
+      #wrapper #quote-box #button-flex-container #new-quote:hover {
+        border-color: #0066ff;
+        color: #0066ff; }
+      #wrapper #quote-box #button-flex-container #label {
+        flex-basis: 35px; }
+      @media only screen and (max-width: 600px) {
+        #wrapper #quote-box #button-flex-container #new-quote {
+          flex-basis: 40px;
+          width: 133px;
+          font-size: 20px; }
+        #wrapper #quote-box #button-flex-container #label {
+          font-size: 20px; } }
+    @media only screen and (max-width: 600px) {
+      #wrapper #quote-box #button-flex-container {
+        flex-basis: 83px; } }
+  @media only screen and (max-width: 600px) {
+    #wrapper #quote-box {
+      width: 80vw; } }
 
 /*# sourceMappingURL=style.css.map */
